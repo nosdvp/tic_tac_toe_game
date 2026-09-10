@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.game {
+  width: 100%;
+  height: 100vh;
+  background-color: #192a32;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.game__menu {
+  width: 450px;
+  height: 500px;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game__menu_blockChoise {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #1e3640;
+  box-shadow: 0px 5px 0px #0f2028;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
+.game__menu_blockChoise_title {
+  color: #8aa2ac;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.game__menu_blockChoise_blockForSelect {
+  width: 100%;
+  padding: 10px 5px;
+  height: auto;
+  background-color: #1a2a35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  gap: 10px;
+}
+.game__menu_blockChoise_blockForSelect_XActive, .game__menu_blockChoise_blockForSelect_OActive {
+  width: 48%;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #a9bec9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.game__menu_blockChoise_blockForSelect_XInactive, .game__menu_blockChoise_blockForSelect_OInactive {
+  width: 48%;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.game__menu_blockChoise_blockForSelect_XInactive div, .game__menu_blockChoise_blockForSelect_OInactive div {
+  background-image: url(./img/0.png);
+  height: 30px;
+  width: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+}
+.game__menu_blockChoise_blockForSelect_XActive div, .game__menu_blockChoise_blockForSelect_XInactive div {
+  background-image: url(./img/x.png);
+  height: 25px;
+  width: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+}
+.game__menu_blockChoise_blockForSelect_OActive div, .game__menu_blockChoise_blockForSelect_OInactive div {
+  background-image: url(./img/0.png);
+  height: 25px;
+  width: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+}
+.game__menu_blockChoise_subTitle {
+  color: #4e6570;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.game__menu_playWithPC, .game__menu_playWithPlayer {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  background-color: #f2b236;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0px 5px 0px #d89720;
+  font-size: 23px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.1s;
+}
+.game__menu_playWithPC:hover, .game__menu_playWithPlayer:hover {
+  transform: scale(1.02);
+  transition: all 0.1s;
+}
+.game__menu_playWithPC:active, .game__menu_playWithPlayer:active {
+  transform: scale(0.98);
+  transition: all 0.1s;
+}
+.game__menu_playWithPlayer {
+  background-color: #31c4bc;
+  box-shadow: 0px 5px 0px #1b9d98;
+}/*# sourceMappingURL=App.css.map */
