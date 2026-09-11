@@ -11,7 +11,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    &__menu{
+    &__menu,
+    &__playField{
         width: 450px;
         height: 500px;
         border: 1px solid red;
@@ -19,6 +20,23 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        &_title{
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            img:nth-child(1){
+                width: 30px;
+                height: 30px;
+            }
+            img:nth-child(2){
+                width: 33px;
+                height: 33px;
+            }
+        }
         &_blockChoise{
             width: 100%;
             height: auto;
@@ -73,7 +91,6 @@
                     align-items: center;
                     justify-content: center;
                     div{
-                        background-image: url(./img/0.png);
                         height: 30px;
                         width: 30px;
                         background-position: center;
@@ -84,26 +101,16 @@
                 }
                 &_XActive,
                 &_XInactive{
-                    div{
-                        background-image: url(./img/x.png);
-                        height: 25px;
-                        width: 25px;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                        border: none;
-                    }
+                    img{
+                        width: 30px;
+                        height: 30px;
+                    }    
                 }
                 &_OActive,
                 &_OInactive{
-                    div{
-                        background-image: url(./img/0.png);
-                        height: 25px;
-                        width: 25px;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                        border: none;
+                    img{
+                        width: 33px;
+                        height: 33px;
                     }
                 }
             }
@@ -141,6 +148,61 @@
         &_playWithPlayer{
             background-color: #31c4bc;
             box-shadow: 0px 5px 0px #1b9d98;
+        }
+    }
+    &__playField{
+        &_fieldBlock{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            button{
+                width: 75%;
+
+            }
+        }
+        &_resultBlock{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            &_playerResult,
+            &_ties,
+            &_opponentResult{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 25%;
+                height: auto;
+                background-color: #31c4bc;
+                padding: 5px;
+                border-radius: 10px;
+                p:nth-child(1){
+                    color: black;
+                    font-size: 16px;
+                }
+                p:nth-child(2){
+                    color: black;
+                    font-weight: bold;
+                    font-size: 22px;
+                }
+            }
+            &_ties{
+                background-color: #a8bec9;
+            }
+            &_opponentResult{
+                background-color: #f2b237;
+            }
+        }
+    }
+}
+
+@media(max-width:450px){
+    .game{
+        &__menu{
+            margin: 0px 5px;
         }
     }
 }

@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
 }
-.game__menu {
+.game__menu, .game__playField {
   width: 450px;
   height: 500px;
   border: 1px solid red;
@@ -21,7 +21,24 @@
   justify-content: center;
   flex-direction: column;
 }
-.game__menu_blockChoise {
+.game__menu_title, .game__playField_title {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.game__menu_title img:nth-child(1), .game__playField_title img:nth-child(1) {
+  width: 30px;
+  height: 30px;
+}
+.game__menu_title img:nth-child(2), .game__playField_title img:nth-child(2) {
+  width: 33px;
+  height: 33px;
+}
+.game__menu_blockChoise, .game__playField_blockChoise {
   width: 100%;
   height: auto;
   padding: 10px;
@@ -34,13 +51,13 @@
   justify-content: center;
   flex-direction: column;
 }
-.game__menu_blockChoise_title {
+.game__menu_blockChoise_title, .game__playField_blockChoise_title {
   color: #8aa2ac;
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 10px;
 }
-.game__menu_blockChoise_blockForSelect {
+.game__menu_blockChoise_blockForSelect, .game__playField_blockChoise_blockForSelect {
   width: 100%;
   padding: 10px 5px;
   height: auto;
@@ -51,7 +68,7 @@
   border-radius: 10px;
   gap: 10px;
 }
-.game__menu_blockChoise_blockForSelect_XActive, .game__menu_blockChoise_blockForSelect_OActive {
+.game__menu_blockChoise_blockForSelect_XActive, .game__menu_blockChoise_blockForSelect_OActive, .game__playField_blockChoise_blockForSelect_XActive, .game__playField_blockChoise_blockForSelect_OActive {
   width: 48%;
   height: 40px;
   border-radius: 10px;
@@ -63,7 +80,7 @@
   align-items: center;
   justify-content: center;
 }
-.game__menu_blockChoise_blockForSelect_XInactive, .game__menu_blockChoise_blockForSelect_OInactive {
+.game__menu_blockChoise_blockForSelect_XInactive, .game__menu_blockChoise_blockForSelect_OInactive, .game__playField_blockChoise_blockForSelect_XInactive, .game__playField_blockChoise_blockForSelect_OInactive {
   width: 48%;
   height: 40px;
   border-radius: 10px;
@@ -75,8 +92,7 @@
   align-items: center;
   justify-content: center;
 }
-.game__menu_blockChoise_blockForSelect_XInactive div, .game__menu_blockChoise_blockForSelect_OInactive div {
-  background-image: url(./img/0.png);
+.game__menu_blockChoise_blockForSelect_XInactive div, .game__menu_blockChoise_blockForSelect_OInactive div, .game__playField_blockChoise_blockForSelect_XInactive div, .game__playField_blockChoise_blockForSelect_OInactive div {
   height: 30px;
   width: 30px;
   background-position: center;
@@ -84,31 +100,21 @@
   background-size: cover;
   border: none;
 }
-.game__menu_blockChoise_blockForSelect_XActive div, .game__menu_blockChoise_blockForSelect_XInactive div {
-  background-image: url(./img/x.png);
-  height: 25px;
-  width: 25px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: none;
+.game__menu_blockChoise_blockForSelect_XActive img, .game__menu_blockChoise_blockForSelect_XInactive img, .game__playField_blockChoise_blockForSelect_XActive img, .game__playField_blockChoise_blockForSelect_XInactive img {
+  width: 30px;
+  height: 30px;
 }
-.game__menu_blockChoise_blockForSelect_OActive div, .game__menu_blockChoise_blockForSelect_OInactive div {
-  background-image: url(./img/0.png);
-  height: 25px;
-  width: 25px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: none;
+.game__menu_blockChoise_blockForSelect_OActive img, .game__menu_blockChoise_blockForSelect_OInactive img, .game__playField_blockChoise_blockForSelect_OActive img, .game__playField_blockChoise_blockForSelect_OInactive img {
+  width: 33px;
+  height: 33px;
 }
-.game__menu_blockChoise_subTitle {
+.game__menu_blockChoise_subTitle, .game__playField_blockChoise_subTitle {
   color: #4e6570;
   font-weight: bold;
   font-size: 16px;
   margin-top: 10px;
 }
-.game__menu_playWithPC, .game__menu_playWithPlayer {
+.game__menu_playWithPC, .game__menu_playWithPlayer, .game__playField_playWithPC, .game__playField_playWithPlayer {
   width: 100%;
   height: 50px;
   border: none;
@@ -123,15 +129,63 @@
   margin-bottom: 20px;
   transition: all 0.1s;
 }
-.game__menu_playWithPC:hover, .game__menu_playWithPlayer:hover {
+.game__menu_playWithPC:hover, .game__menu_playWithPlayer:hover, .game__playField_playWithPC:hover, .game__playField_playWithPlayer:hover {
   transform: scale(1.02);
   transition: all 0.1s;
 }
-.game__menu_playWithPC:active, .game__menu_playWithPlayer:active {
+.game__menu_playWithPC:active, .game__menu_playWithPlayer:active, .game__playField_playWithPC:active, .game__playField_playWithPlayer:active {
   transform: scale(0.98);
   transition: all 0.1s;
 }
-.game__menu_playWithPlayer {
+.game__menu_playWithPlayer, .game__playField_playWithPlayer {
   background-color: #31c4bc;
   box-shadow: 0px 5px 0px #1b9d98;
+}
+.game__playField_fieldBlock {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.game__playField_fieldBlock button {
+  width: 75%;
+}
+.game__playField_resultBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.game__playField_resultBlock_playerResult, .game__playField_resultBlock_ties, .game__playField_resultBlock_opponentResult {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 25%;
+  height: auto;
+  background-color: #31c4bc;
+  padding: 5px;
+  border-radius: 10px;
+}
+.game__playField_resultBlock_playerResult p:nth-child(1), .game__playField_resultBlock_ties p:nth-child(1), .game__playField_resultBlock_opponentResult p:nth-child(1) {
+  color: black;
+  font-size: 16px;
+}
+.game__playField_resultBlock_playerResult p:nth-child(2), .game__playField_resultBlock_ties p:nth-child(2), .game__playField_resultBlock_opponentResult p:nth-child(2) {
+  color: black;
+  font-weight: bold;
+  font-size: 22px;
+}
+.game__playField_resultBlock_ties {
+  background-color: #a8bec9;
+}
+.game__playField_resultBlock_opponentResult {
+  background-color: #f2b237;
+}
+
+@media (max-width: 450px) {
+  .game__menu {
+    margin: 0px 5px;
+  }
 }/*# sourceMappingURL=App.css.map */
