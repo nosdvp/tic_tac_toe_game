@@ -2,6 +2,9 @@ import { useState } from 'react';
 import './App.css';
 import cross from './img/cross.svg'
 import circle from './img/circle.svg'
+import reset from './img/reset.svg'
+import crossSilver from './img/cross-silver.svg'
+import circleSilver from './img/circle-silver.svg'
 
 function App() {
 
@@ -56,16 +59,30 @@ function App() {
         <>
         <section className='game__playField'>
 
+          <div className='game__playField_nav'>
+            <div className='game__playField_nav_img'>
+              <img src={cross}/>
+              <img src={circle}/>
+            </div>
+            <div className='game__playField_nav_markIndicate'>
+              {gameMark === 'cross' ? <img src={crossSilver}/> : <img src={circleSilver}/>}
+              <p>TURN</p>
+            </div>
+            <button className='game__playField_nav_reset'>
+              <img src={reset}/>
+            </button>
+          </div>
+
           <div className='game__playField_fieldBlock'>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
           </div>
 
           <div className='game__playField_resultBlock'>
@@ -82,6 +99,7 @@ function App() {
               <p>9</p>
             </div>
           </div>
+          <button onClick={() => setGameStep('menu')} className='game__menu_back'>Back to main menu</button>
         </section>
         </>
       )}

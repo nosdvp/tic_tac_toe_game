@@ -13,9 +13,9 @@
     justify-content: center;
     &__menu,
     &__playField{
-        width: 450px;
-        height: 500px;
-        border: 1px solid red;
+        width: 300px;
+        height: 550px;
+        //border: 1px solid red;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -149,17 +149,120 @@
             background-color: #31c4bc;
             box-shadow: 0px 5px 0px #1b9d98;
         }
+        &_back{
+            width: 100%;
+            height: 50px;
+            margin-top: 20px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            background-color: #58f5ed;
+            box-shadow: 0px 3px 0px #31c4bc;
+            font-weight: bold;
+            &:hover{
+                transform: scale(1.02);
+                transition: all 0.1s;
+            }
+            &:active{
+                transform: scale(0.98);
+                transition: all 0.1s;
+            }
+        }
     }
     &__playField{
+        &_nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 40px;
+            &_img{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                img:nth-child(1){
+                    width: 30px;
+                    height: 30px;
+                }
+                img:nth-child(2){
+                    width: 33px;
+                    height: 33px;
+                }
+            }
+            &_markIndicate{
+                width: 110px;
+                height: 45px;
+                background-color: #1f343d;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                img{
+                    width: 25px;
+                    height: 25px;
+                }
+                p{
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #a5bdc5;
+                }
+            }
+            &_reset{
+                width: 35px;
+                height: 35px;
+                background-color: #a8bfc9;
+                border-radius: 5px;
+                box-shadow: 0px 3px 0px #6d8692;
+                transition: all 0.1s;
+                cursor: pointer;
+                outline: none;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:hover{
+                    transition: all 0.1s;
+                    transform: scale(1.02);
+                }
+                &:active{
+                    transition: all 0.1s;
+                    transform: scale(0.98);
+                }
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
         &_fieldBlock{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             width: 100%;
             align-items: center;
             justify-content: center;
+            gap: 0 15px;
             button{
-                width: 75%;
-
+                width: 100%;
+                background-color: #1e3640;
+                box-shadow: 0px 5px 0px #12222a;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                margin-bottom: 20px;
+                padding: 40px 0;
+                cursor: pointer;
+                transition: all 0.1s;
+                &:hover{
+                    transition: all 0.1s;
+                    transform: scale(1.02);
+                }
+                &:active{
+                    transition: all 0.1s;
+                    transform: scale(0.98);
+                }
             }
         }
         &_resultBlock{
@@ -174,7 +277,7 @@
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-                width: 25%;
+                width: 30%;
                 height: auto;
                 background-color: #31c4bc;
                 padding: 5px;
