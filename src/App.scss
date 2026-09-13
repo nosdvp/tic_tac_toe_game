@@ -14,8 +14,8 @@
     &__menu,
     &__playField{
         width: 300px;
-        height: 550px;
-        //border: 1px solid red;
+        height: 650px;
+        border: 1px solid red;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -172,12 +172,47 @@
         }
     }
     &__playField{
+        &_nameMode{
+            font-weight: bold;
+            font-size: 30px;
+            color: #58f5ed;
+            margin-bottom: 20px;
+        }
+        &_markIndicate{
+            width: 270px;
+            height: 50px;
+            background-color: #1f343d;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            p{
+                font-size: 21px;
+                font-weight: bold;
+                color: #a5bdc5;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .stepCross{
+                width: 25px;
+                height: 25px;
+                margin-left: 8px;
+                }
+                .circleCross{
+                    width: 25px;
+                    height: 25px;
+                    margin-left: 8px;
+                }
+            }
+        }
         &_nav{
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            margin-bottom: 40px;
+            margin-top: 10px;
+            margin-bottom: 20px;
             &_img{
                 display: flex;
                 align-items: center;
@@ -190,24 +225,6 @@
                 img:nth-child(2){
                     width: 33px;
                     height: 33px;
-                }
-            }
-            &_markIndicate{
-                width: 110px;
-                height: 45px;
-                background-color: #1f343d;
-                border-radius: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                img{
-                    width: 25px;
-                    height: 25px;
-                }
-                p{
-                    font-size: 20px;
-                    font-weight: bold;
-                    color: #a5bdc5;
                 }
             }
             &_reset{
@@ -252,9 +269,18 @@
                 border: none;
                 outline: none;
                 margin-bottom: 20px;
-                padding: 40px 0;
+                padding: 45px 0;
                 cursor: pointer;
                 transition: all 0.1s;
+                position: relative;
+                img{
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
                 &:hover{
                     transition: all 0.1s;
                     transform: scale(1.02);
