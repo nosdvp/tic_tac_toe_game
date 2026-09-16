@@ -116,6 +116,12 @@ function App() {
       setWinner('cross')
       setModalWin(true)
     }
+
+    if(!newField.includes('')){
+      setWinner('tie')
+      setCountTies(prev => prev + 1)
+      setModalWin(true)
+    }
   }
 
   const gameReset = () => {
@@ -146,8 +152,8 @@ function App() {
                   <img src={cross}/>
                 </button>
                 <button 
-                  onClick={() => setGameMark('zero')}
-                  className={gameMark === 'zero' ? 'game__menu_blockChoise_blockForSelect_OActive' : 'game__menu_blockChoise_blockForSelect_OInactive'}
+                  onClick={() => setGameMark('circle')}
+                  className={gameMark === 'circle' ? 'game__menu_blockChoise_blockForSelect_OActive' : 'game__menu_blockChoise_blockForSelect_OInactive'}
                 >
                   <img src={circle}/>
                 </button>
@@ -175,8 +181,16 @@ function App() {
           {modalWin === true && (
             <div className='modal'>
               <div className='modal__infoBlock'>
-                  <p className='modal__infoBlock_title'>YOU WON!</p>
-                  <p className='modal__infoBlock_result'>{winner === 'cross' ? <img src={cross}/> : <img src={circle}/>} TAKES THE ROUND</p>
+                  <p className='modal__infoBlock_title'>{winner !== 'tie' ? <span>YOU WON!</span> : <span>NO WINNER</span>}</p>
+                  <p className='modal__infoBlock_result'>
+                    {winner === 'tie'
+                      ? 'NO ONE TAKES THE ROUND'
+                      : winner === 'cross'
+                        ? <img src={cross}/>
+                        : <img src={circle}/>
+                    }
+                    {winner === 'tie' ? '' : ' TAKES THE ROUND'}
+                  </p>
                   <div className='modal__infoBlock_navBlock'>
                     <button onClick={() => {
                       setGameStep('menu')
@@ -203,8 +217,6 @@ function App() {
                         setCountWinCross(prev => prev + 1)
                       }else if(winner === 'circle'){
                         setCountWinCircle(prev => prev + 1)
-                      }else{
-                        setCountTies(prev => prev + 1)
                       }
                     }}>NEXT ROUND</button>
                   </div>
@@ -271,18 +283,21 @@ function App() {
 
               <div className='game__playField_resultBlock'>
                 <div className='game__playField_resultBlock_playerResult'>
-                  {gameMark === 'cross' ? <p>X (YOU)</p> : <p>O (YOU)</p>}
+                  <p>{gameMark === 'cross' ? 'X (YOU)' : 'X PLAYER'}</p>
                   <p>{countWinCross}</p>
                 </div>
+
                 <div className='game__playField_resultBlock_ties'>
                   <p>TIES</p>
                   <p>{countTies}</p>
                 </div>
+
                 <div className='game__playField_resultBlock_opponentResult'>
-                  <p>{mode === 'play with PC' ? <p>O CPU</p> : <p>PLAYER</p>}</p>
+                  <p>{gameMark === 'circle' ? 'O (YOU)' : 'O PLAYER'}</p>
                   <p>{countWinCircle}</p>
                 </div>
               </div>
+
               <button onClick={() => {
                 setGameStep('menu')
                 setField([
